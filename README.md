@@ -54,9 +54,11 @@ With a bigger screen on tablet than on a phone, I want to create a Menubar to pu
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    <red>android:tag="MenuBarRootView"</red>
+    ```
+    **android:tag="MenuBarRootView"**
+    ```
     tools:context=".MainActivity">
-    <Line<br>rLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent" android:orientation="vertical">
         <TextView
@@ -148,7 +150,7 @@ Thanks to [dongjunkun/DropDownMenu](https://github.com/dongjunkun/DropDownMenu)
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    `android:tag="MenuBarRootView"`
+    android:tag="MenuBarRootView"
     tools:context=".MainActivity">
     <LinearLayout
         android:layout_width="match_parent"
@@ -162,7 +164,7 @@ Thanks to [dongjunkun/DropDownMenu](https://github.com/dongjunkun/DropDownMenu)
         <include layout="@layout/menubar_sample" />
 
     </LinearLayout>
-    `<com.luckyfirefly.dropdownmenu.MaskView
+    <com.luckyfirefly.dropdownmenu.MaskView
         android:id="@+id/mask_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -176,7 +178,7 @@ Thanks to [dongjunkun/DropDownMenu](https://github.com/dongjunkun/DropDownMenu)
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    </FrameLayout>`
+    </FrameLayout>
 </FrameLayout>
 ```
 # 感谢
