@@ -63,7 +63,7 @@ public class DropDownMenu extends LinearLayout implements MenuBar.OnMenuSelected
         maskView.setOnTouchListener(new OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                if (!isTouchPointInView(menuBar, (int) event.getX(), (int) event.getY())) {
+                if (!isTouchPointInMenuBar((int) event.getX(), (int) event.getY())) {
                     closeMenu();
                     return true;
                 }
@@ -73,16 +73,13 @@ public class DropDownMenu extends LinearLayout implements MenuBar.OnMenuSelected
         this.popupMenuContainer = popupParent;
     }
 
-    private boolean isTouchPointInView(View view, int x, int y) {
-        if (view == null) {
-            return false;
-        }
+    private boolean isTouchPointInMenuBar(int x, int y) {
         int[] location = new int[2];
-        view.getLocationInWindow(location);
+        getLocationInScreen(menuBar, location);
         int left = location[0];
         int top = location[1];
-        int right = left + view.getMeasuredWidth();
-        int bottom = top + view.getMeasuredHeight();
+        int right = left + menuBar.getMeasuredWidth();
+        int bottom = top + menuBar.getMeasuredHeight();
         //view.isClickable() &&
         if (y >= top && y <= bottom && x >= left
                 && x <= right) {
@@ -115,7 +112,8 @@ public class DropDownMenu extends LinearLayout implements MenuBar.OnMenuSelected
                     RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
                     int left = menuBar.getLeft() + i * (menuBar.getWidth() / count);
                     int[] location = new int[2];
-                    menuBar.getLocationInWindow(location);
+                    //menuBar.getLocationOnScreen(location);
+                    getLocationInScreen(menuBar, location);
                     menuBarScreenX = location[0];
                     menuBarScreenY = location[1];
                     int top = menuBarScreenY + menuBar.getHeight();
@@ -139,7 +137,23 @@ public class DropDownMenu extends LinearLayout implements MenuBar.OnMenuSelected
             }
         });
     }
+    private void getLocationInScreen(View view, int[] locations) {
+        System.out.println(view);
+        int[] current = new int[2];
 
+        view.getLocationOnScreen(locations);
+
+        while (view.getParent() instanceof View) {
+            view = (View) view.getParent();
+
+            if ("MenuBarRootView".equals(view.getTag())) {
+                view.getLocationInWindow(current);
+                locations[0] -= current[0];
+                locations[1] -= current[1];
+                break;
+            }
+        }
+    }
     public void setMenuItemClicked(int menu, int position, Object data) {
         dropdownMenus.get(menu).getDataAdapter().setSelectedItem(position, data);
         if (data != null) {
