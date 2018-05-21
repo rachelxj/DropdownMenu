@@ -55,7 +55,9 @@ With a bigger screen on tablet than on a phone, I want to create a Menubar to pu
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 ```
+```
     **android:tag="MenuBarRootView"**
+```
 ```
     tools:context=".MainActivity">
     <LinearLayout
@@ -70,7 +72,7 @@ With a bigger screen on tablet than on a phone, I want to create a Menubar to pu
         <include layout="@layout/menubar_sample" />
 
     </LinearLayout>
-    `<com.luckyfirefly.dropdownmenu.MaskView
+    <com.luckyfirefly.dropdownmenu.MaskView
         android:id="@+id/mask_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -84,7 +86,7 @@ With a bigger screen on tablet than on a phone, I want to create a Menubar to pu
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    </FrameLayout>`
+    </FrameLayout>
 </FrameLayout>
 ```
 
