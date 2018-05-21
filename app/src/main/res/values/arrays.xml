@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="headerList">
+        <item>@string/city</item>
+        <item>@string/gender</item>
+        <item>@string/start_time</item>
+    </string-array>
+    <string-array name= "cityList">
+        <item>N/A</item>
+        <item>New York</item>
+        <item>Paris</item>
+        <item>Beijing</item>
+        <item>Toronto</item>
+        <item>Tokyo</item>
+    </string-array>
+
+    <string-array name="genderList">
+        <item>N/A</item>
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+</resources>

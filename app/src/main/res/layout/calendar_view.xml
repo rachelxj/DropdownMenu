@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:layout_gravity="center">
+
+    <io.blackbox_vision.materialcalendarview.view.CalendarView
+        android:id="@+id/calendar_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        app:calendarBackgroundColor="@android:color/transparent"
+        app:calendarButtonBackgroundColor="@color/colorAccent"
+        app:calendarCurrentDayBackgroundColor="@color/colorAccent"
+        app:calendarCurrentDayTextColor="@android:color/white"
+        app:calendarDayOfWeekTextColor="@android:color/black"
+        app:calendarDisabledDayBackgroundColor="@android:color/transparent"
+        app:calendarDisabledDayTextColor="@android:color/darker_gray"
+        app:calendarIsMultiSelectDayEnabled="false"
+        app:calendarIsOverflowDatesVisible="false"
+        app:calendarSelectedDayBackgroundColor="@color/colorAccent"
+        app:calendarTitleBackgroundColor="@android:color/transparent"
+        app:calendarTitleTextColor="@color/colorAccent"
+        app:calendarWeekBackgroundColor="@android:color/transparent"
+        app:calendarWeekendDays="saturday|sunday"
+        app:calendarWeekendTextColor="@color/colorAccent"></io.blackbox_vision.materialcalendarview.view.CalendarView>
+
+</LinearLayout>

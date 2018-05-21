@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#ffffff</color>
+    <color name="gray">#cccccc</color>
+
+    <color name="drop_down_selected">#FF0000</color>
+    <color name="drop_down_unselected">#111111</color>
+
+    <color name="check_bg">#0F00FF00</color>
+</resources>

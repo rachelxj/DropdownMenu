@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DropDownMenuBar">
+        <attr name="mbTextSize" format="dimension"/>
+        <attr name="mbUnselectedIcon" format="reference"/>
+        <attr name="mbSelectedIcon" format="reference" />
+        <attr name="mbTextSelectedColor" format="color"/>
+        <attr name="mbTextUnselectedColor" format="color" />
+        <attr name="mbDividerColor" format="color"/>
+        <attr name="mbSelectedBackgroundDrawable" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="DropDownMenu">
+        <attr name="menuMaskColor" format="color"/>
+        <attr name="menuWidth" format="dimension"/>
+        <attr name="menuHeightPercent" format="float"/>
+    </declare-styleable>
+</resources>

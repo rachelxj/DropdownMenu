@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/spc_toolbar_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="55dp"
+    android:layout_gravity="center"
+    android:layout_margin="10dp"
+    android:orientation="horizontal">
+
+    <com.luckyfirefly.dropdownmenu.DropDownMenu
+        android:id="@+id/dropdown_menu"
+        android:layout_width="600dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:menuWidth="400dp">
+
+        <com.luckyfirefly.dropdownmenu.MenuBar
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/shape_corner"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:mbSelectedIcon="@mipmap/drop_down_selected_icon"
+            app:mbTextSize="24sp"
+            app:mbUnselectedIcon="@mipmap/drop_down_unselected_icon">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/city" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/gender" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/start_time" />
+
+        </com.luckyfirefly.dropdownmenu.MenuBar>
+    </com.luckyfirefly.dropdownmenu.DropDownMenu>
+
+</LinearLayout>
