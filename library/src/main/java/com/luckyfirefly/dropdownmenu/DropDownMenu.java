@@ -138,7 +138,6 @@ public class DropDownMenu extends LinearLayout implements MenuBar.OnMenuSelected
         });
     }
     private void getLocationInScreen(View view, int[] locations) {
-        System.out.println(view);
         int[] current = new int[2];
 
         view.getLocationOnScreen(locations);
