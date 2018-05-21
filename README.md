@@ -54,11 +54,7 @@ With a bigger screen on tablet than on a phone, I want to create a Menubar to pu
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-```
-```
-    **android:tag="MenuBarRootView"**
-```
-```
+    android:tag="MenuBarRootView"
     tools:context=".MainActivity">
     <LinearLayout
         android:layout_width="match_parent"
@@ -89,7 +85,6 @@ With a bigger screen on tablet than on a phone, I want to create a Menubar to pu
     </FrameLayout>
 </FrameLayout>
 ```
-
 
 
 # Acknowledge
