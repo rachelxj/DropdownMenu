@@ -7,17 +7,23 @@ With a bigger screen on tablet than on a phone, I want to create a Menubar to pu
 # Add it to Android Studio Project
 ## Gradle
 **Step 1. Add the JitPack repository to your build file**
+
 Add it in your root build.gradle at the end of repositories:
+
+```
 allprojects {
 	repositories {
 		...
 		maven { url 'https://jitpack.io' }
 	}
 }
+```
 **Step 2. Add the dependency**
+```
 dependencies {
 		implementation 'com.github.rachelxj:DropdownMenu:v1.0.0'
 }
+```
 
 # Usage
 **1. Add dropdown menu in layout file**
@@ -162,17 +168,23 @@ Thanks to [dongjunkun/DropDownMenu](https://github.com/dongjunkun/DropDownMenu)
 # 添加到Android Studio Gradle项目中
 ## Gradle
 **Step 1. Add the JitPack repository to your build file**
+
 Add it in your root build.gradle at the end of repositories:
+
+```
 allprojects {
 	repositories {
 		...
 		maven { url 'https://jitpack.io' }
 	}
 }
+```
 **Step 2. Add the dependency**
+```
 dependencies {
 		implementation 'com.github.rachelxj:DropdownMenu:v1.0.0'
 }
+```
 
 # 使用方法
 **1. 在布局文件中定义下拉菜单**
