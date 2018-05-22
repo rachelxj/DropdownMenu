@@ -5,7 +5,7 @@ With a bigger screen on tablet than on a phone, I want to create a Menubar to pu
 ![](https://github.com/rachelxj/DropdownMenu/blob/master/Screenshot/device-2018-05-21-165323.gif)
 
 # Usage
-* Add dropdown menu in layout file
+1. Add dropdown menu in layout file
 ```
     <com.luckyfirefly.dropdownmenu.DropDownMenu
         android:id="@+id/dropdown_menu"
@@ -46,7 +46,7 @@ With a bigger screen on tablet than on a phone, I want to create a Menubar to pu
         </com.luckyfirefly.dropdownmenu.MenuBar>
     </com.luckyfirefly.dropdownmenu.DropDownMenu>
 ```
-* Add mask, popup parent view on root view, root view must use FrameLayout. Add one special Tag "MenuBarRootView" on root layout, which is used to calculate popup location
+2. Add mask, popup parent view on root view, root view must use FrameLayout. Add one special Tag "MenuBarRootView" on root layout, which is used to calculate popup location
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -85,7 +85,49 @@ With a bigger screen on tablet than on a phone, I want to create a Menubar to pu
     </FrameLayout>
 </FrameLayout>
 ```
+3. Set up menu items, each menu item consists of a view and a data adapter
+```Java
+dropDownMenu = findViewById(R.id.dropdown_menu);
+// Attach mask view and popup container
+MaskView maskView = findViewById(R.id.mask_view);
+FrameLayout popupParent = findViewById(R.id.popup_parent);
+dropDownMenu.attachViews(maskView, popupParent);
 
+List<BaseDropdownView> list = new ArrayList<>();
+ListView cityListView = new ListView(this);
+DropdownListAdapter cityListAdapter = new DropdownListAdapter(this, Arrays.asList(cities));
+cityListView.setAdapter(cityListAdapter);
+cityListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+	@Override
+	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+		dropDownMenu.setMenuItemClicked(0, position, cities[position]);
+	}
+});
+list.add(new BaseDropdownView(cityListView, cityListAdapter));
+
+ListView genderListView = new ListView(this);
+DropdownListAdapter genderListAdapter = new DropdownListAdapter(this, Arrays.asList(genders));
+genderListView.setAdapter(genderListAdapter);
+genderListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+	@Override
+	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+		dropDownMenu.setMenuItemClicked(1, position, genders[position]);
+	}
+});
+list.add(new BaseDropdownView(genderListView, genderListAdapter));
+
+View calendarViewLayout = LayoutInflater.from(this).inflate(R.layout.calendar_view, null);
+io.blackbox_vision.materialcalendarview.view.CalendarView calendarView = calendarViewLayout.findViewById(R.id.calendar_view);
+calendarView.setFirstDayOfWeek(Calendar.SUNDAY).setOnDateClickListener(this::onDateClick);
+list.add(new BaseDropdownView(calendarViewLayout, new CalendarDropdownAdapter()));
+// set up drowdown menu
+dropDownMenu.setDropDownMenu(Arrays.asList(headers), list);
+```
+
+```Java
+// retrieve each menu item's selected item
+Object data = dropDownMenu.getMenuSelectedItem(index);
+```
 
 # Acknowledge
 Thanks to [dongjunkun/DropDownMenu](https://github.com/dongjunkun/DropDownMenu)
@@ -98,7 +140,7 @@ Thanks to [dongjunkun/DropDownMenu](https://github.com/dongjunkun/DropDownMenu)
 ![](https://github.com/rachelxj/DropdownMenu/blob/master/Screenshot/device-2018-05-21-165323.gif)
 
 # 使用方法
-* 在布局文件中定义下拉菜单
+1. 在布局文件中定义下拉菜单
 ```
     <com.luckyfirefly.dropdownmenu.DropDownMenu
         android:id="@+id/dropdown_menu"
@@ -139,7 +181,7 @@ Thanks to [dongjunkun/DropDownMenu](https://github.com/dongjunkun/DropDownMenu)
         </com.luckyfirefly.dropdownmenu.MenuBar>
     </com.luckyfirefly.dropdownmenu.DropDownMenu>
 ```
-* 在最上层的布局中添加遮罩及弹出窗体父布局对象, 根布局必须采用FrameLayout. 在根布局中添加标签"MenuBarRootView"，该标签用来计算弹出窗体的位置
+2. 在最上层的布局中添加遮罩及弹出窗体父布局对象, 根布局必须采用FrameLayout. 在根布局中添加标签"MenuBarRootView"，该标签用来计算弹出窗体的位置
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -177,6 +219,49 @@ Thanks to [dongjunkun/DropDownMenu](https://github.com/dongjunkun/DropDownMenu)
 
     </FrameLayout>
 </FrameLayout>
+```
+3. 设置菜单项，每一个下拉菜单由一个View和一个DataAdapter组成
+```Java
+dropDownMenu = findViewById(R.id.dropdown_menu);
+// 添加遮罩和弹出窗体容器
+MaskView maskView = findViewById(R.id.mask_view);
+FrameLayout popupParent = findViewById(R.id.popup_parent);
+dropDownMenu.attachViews(maskView, popupParent);
+
+List<BaseDropdownView> list = new ArrayList<>();
+ListView cityListView = new ListView(this);
+DropdownListAdapter cityListAdapter = new DropdownListAdapter(this, Arrays.asList(cities));
+cityListView.setAdapter(cityListAdapter);
+cityListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+	@Override
+	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+		dropDownMenu.setMenuItemClicked(0, position, cities[position]);
+	}
+});
+list.add(new BaseDropdownView(cityListView, cityListAdapter));
+
+ListView genderListView = new ListView(this);
+DropdownListAdapter genderListAdapter = new DropdownListAdapter(this, Arrays.asList(genders));
+genderListView.setAdapter(genderListAdapter);
+genderListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+	@Override
+	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+		dropDownMenu.setMenuItemClicked(1, position, genders[position]);
+	}
+});
+list.add(new BaseDropdownView(genderListView, genderListAdapter));
+
+View calendarViewLayout = LayoutInflater.from(this).inflate(R.layout.calendar_view, null);
+io.blackbox_vision.materialcalendarview.view.CalendarView calendarView = calendarViewLayout.findViewById(R.id.calendar_view);
+calendarView.setFirstDayOfWeek(Calendar.SUNDAY).setOnDateClickListener(this::onDateClick);
+list.add(new BaseDropdownView(calendarViewLayout, new CalendarDropdownAdapter()));
+// 设置菜单条的头及下拉菜单
+dropDownMenu.setDropDownMenu(Arrays.asList(headers), list);
+```
+
+```Java
+// 获取每个菜单项选中的值
+Object data = dropDownMenu.getMenuSelectedItem(index);
 ```
 # 感谢
 感谢[dongjunkun/DropDownMenu](https://github.com/dongjunkun/DropDownMenu)
