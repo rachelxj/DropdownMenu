@@ -120,15 +120,18 @@ View calendarViewLayout = LayoutInflater.from(this).inflate(R.layout.calendar_vi
 io.blackbox_vision.materialcalendarview.view.CalendarView calendarView = calendarViewLayout.findViewById(R.id.calendar_view);
 calendarView.setFirstDayOfWeek(Calendar.SUNDAY).setOnDateClickListener(this::onDateClick);
 list.add(new BaseDropdownView(calendarViewLayout, new CalendarDropdownAdapter()));
-// set up drowdown menu
+** Set up drowdown menu
 dropDownMenu.setDropDownMenu(Arrays.asList(headers), list);
 ```
 
+** Retrieve each menu item's selected item
 ```Java
-// retrieve each menu item's selected item
 Object data = dropDownMenu.getMenuSelectedItem(index);
 ```
-
+** Set different dropdown width for menu item
+```Java
+BaseDropdownView dropdownView = new BaseDropdownView(view, adapter, 300);
+```
 # Acknowledge
 Thanks to [dongjunkun/DropDownMenu](https://github.com/dongjunkun/DropDownMenu)
 
@@ -255,13 +258,18 @@ View calendarViewLayout = LayoutInflater.from(this).inflate(R.layout.calendar_vi
 io.blackbox_vision.materialcalendarview.view.CalendarView calendarView = calendarViewLayout.findViewById(R.id.calendar_view);
 calendarView.setFirstDayOfWeek(Calendar.SUNDAY).setOnDateClickListener(this::onDateClick);
 list.add(new BaseDropdownView(calendarViewLayout, new CalendarDropdownAdapter()));
-// 设置菜单条的头及下拉菜单
+** 设置菜单条的头及下拉菜单
 dropDownMenu.setDropDownMenu(Arrays.asList(headers), list);
 ```
 
+** 获取每个菜单项选中的值
 ```Java
-// 获取每个菜单项选中的值
 Object data = dropDownMenu.getMenuSelectedItem(index);
 ```
+** 为下拉菜单设置不同的宽度
+```Java
+BaseDropdownView dropdownView = new BaseDropdownView(view, adapter, 300);
+```
+
 # 感谢
 感谢[dongjunkun/DropDownMenu](https://github.com/dongjunkun/DropDownMenu)
