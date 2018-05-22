@@ -120,7 +120,9 @@ View calendarViewLayout = LayoutInflater.from(this).inflate(R.layout.calendar_vi
 io.blackbox_vision.materialcalendarview.view.CalendarView calendarView = calendarViewLayout.findViewById(R.id.calendar_view);
 calendarView.setFirstDayOfWeek(Calendar.SUNDAY).setOnDateClickListener(this::onDateClick);
 list.add(new BaseDropdownView(calendarViewLayout, new CalendarDropdownAdapter()));
+```
 ## Set up drowdown menu
+```
 dropDownMenu.setDropDownMenu(Arrays.asList(headers), list);
 ```
 
@@ -258,7 +260,9 @@ View calendarViewLayout = LayoutInflater.from(this).inflate(R.layout.calendar_vi
 io.blackbox_vision.materialcalendarview.view.CalendarView calendarView = calendarViewLayout.findViewById(R.id.calendar_view);
 calendarView.setFirstDayOfWeek(Calendar.SUNDAY).setOnDateClickListener(this::onDateClick);
 list.add(new BaseDropdownView(calendarViewLayout, new CalendarDropdownAdapter()));
+```
 ## 设置菜单条的头及下拉菜单
+```
 dropDownMenu.setDropDownMenu(Arrays.asList(headers), list);
 ```
 
