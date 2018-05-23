@@ -24,6 +24,20 @@ dependencies {
 		implementation 'com.github.rachelxj:DropdownMenu:v1.0.0'
 }
 ```
+## Maven
+```
+<repositories>
+    <repository>
+	<id>jitpack.io</id>
+	<url>https://jitpack.io</url>
+    </repository>
+</repositories>
+<dependency>
+    <groupId>com.github.rachelxj</groupId>
+    <artifactId>DropdownMenu</artifactId>
+    <version>v1.0.0</version>
+</dependency>
+```
 
 # Usage
 **1. Add dropdown menu in layout file**
@@ -184,6 +198,20 @@ allprojects {
 dependencies {
 		implementation 'com.github.rachelxj:DropdownMenu:v1.0.0'
 }
+```
+## Maven
+```
+<repositories>
+    <repository>
+	<id>jitpack.io</id>
+	<url>https://jitpack.io</url>
+    </repository>
+</repositories>
+<dependency>
+    <groupId>com.github.rachelxj</groupId>
+    <artifactId>DropdownMenu</artifactId>
+    <version>v1.0.0</version>
+</dependency>
 ```
 
 # 使用方法
